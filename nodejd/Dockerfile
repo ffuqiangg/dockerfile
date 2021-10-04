@@ -27,7 +27,11 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone \
     && mkdir $JD_DIR \
-    && git clone $JD_URL $JD_DIR
+    && git clone $JD_URL $JD_DIR \
+    && chmod +x $JD_DIR/*.sh \
+    && ln -sf $JD_DIR/update.sh /usr/local/bin/update \
+    && ln -sf $JD_DIR/task.sh /usr/local/bin/task \
+    && ln -sf $JD_DIR/rmlog.sh /usr/local/bin/rmlog
 COPY --from=nevinee/loop:latest / /
 COPY s6-overlay /
 WORKDIR /root
