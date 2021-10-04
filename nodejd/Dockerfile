@@ -27,10 +27,10 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone \
     && git clone $JD_URL $JD_DIR \
-    && mkdir $JD_DIR/log $JD_DIR/raw \
+    && mkdir $JD_DIR/log $JD_DIR/raw $JD_DIR/config \
     && chmod +x $JD_DIR/*.sh \
     && npm config set registry https://registry.npm.taobao.org
 COPY --from=nevinee/loop:latest / /
 COPY s6-overlay /
 WORKDIR $JD_DIR
-ENTRYPOINT ["/init"]
+ENTRYPOINT ["./start.sh"]
