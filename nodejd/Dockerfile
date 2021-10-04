@@ -1,7 +1,7 @@
 FROM alpine
 LABEL maintainer="Evine Deng <evinedeng@foxmail.com>"
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
-    HOME=/root \
+    HOME=/jd \
     LANG=zh_CN.UTF-8 \
     SHELL=/bin/bash \
     PS1="\u@\h:\w \$ " \
