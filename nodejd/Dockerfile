@@ -26,6 +26,7 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
     && rm -rf /var/cache/apk/* \
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone \
+    && mkdir $JD_DIR \
     && git clone $JD_URL $JD_DIR
 COPY --from=nevinee/loop:latest / /
 COPY s6-overlay /
