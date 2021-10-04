@@ -31,10 +31,8 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
     && chmod +x $JD_DIR/*.sh \
     && ln -sf $JD_DIR/update.sh /usr/local/bin/update \
     && ln -sf $JD_DIR/task.sh /usr/local/bin/task \
-    && ln -sf $JD_DIR/rmlog.sh /usr/local/bin/rmlog \
-    && cp $JD_DIR/docker-entrypoint.sh /usr/local/bin/ \
-    && chmod +x /usr/local/bin/docker-entrypoint.sh
+    && ln -sf $JD_DIR/rmlog.sh /usr/local/bin/rmlog
 COPY --from=nevinee/loop:latest / /
 COPY s6-overlay /
 WORKDIR $JD_DIR
-ENTRYPOINT ["docker-entrypoint.sh"]
+ENTRYPOINT ["/init"]
