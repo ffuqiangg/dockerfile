@@ -29,6 +29,7 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
     && git clone $JD_URL $JD_DIR \
     && mkdir $JD_DIR/log \
     && chmod +x $JD_DIR/*.sh \
+    && chmod 777 $JD_DIR/docker-entrypoint.sh \
     && ln -sf $JD_DIR/update.sh /usr/local/bin/update \
     && ln -sf $JD_DIR/task.sh /usr/local/bin/task \
     && ln -sf $JD_DIR/rmlog.sh /usr/local/bin/rmlog
