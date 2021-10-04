@@ -34,5 +34,5 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
     && ln -sf $JD_DIR/rmlog.sh /usr/local/bin/rmlog
 COPY --from=nevinee/loop:latest / /
 COPY s6-overlay /
-WORKDIR /root
-ENTRYPOINT ["/init"]
+WORKDIR $JD_DIR
+ENTRYPOINT ["./docker-entrypoint.sh"]
