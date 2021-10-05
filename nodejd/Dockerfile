@@ -36,5 +36,4 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 COPY --from=nevinee/loop:latest / /
 COPY s6-overlay /
 WORKDIR $JD_DIR
-CMD ["./start.sh"]
 ENTRYPOINT ["/init"]
