@@ -29,6 +29,9 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
     && git clone $JD_URL $JD_DIR \
     && mkdir $JD_DIR/log $JD_DIR/raw $JD_DIR/config \
     && chmod +x $JD_DIR/*.sh \
+    && ln -sf $JD_DIR/update.sh /usr/local/bin/update \
+    && ln -sf $JD_DIR/rmlog.sh /usr/local/bin/rmlog \
+    && ln -sf $JD_DIR/task.sh /usr/local/bin/task \
     && npm config set registry https://registry.npm.taobao.org
 COPY --from=nevinee/loop:latest / /
 COPY s6-overlay /
