@@ -1,5 +1,5 @@
 FROM alpine
-LABEL maintainer="Evine Deng <evinedeng@foxmail.com>"
+LABEL maintainer="AlexVu <ffuqiangg@gmail.com>"
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
     HOME=/jd \
     LANG=zh_CN.UTF-8 \
