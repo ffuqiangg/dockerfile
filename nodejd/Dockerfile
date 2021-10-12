@@ -26,7 +26,6 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
        npm \
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone \
-    && git config --global pull.ff only \
     && git clone $JD_SHELL_URL $JD_DIR \
     && chmod +x $JD_DIR/*.sh \
     && ln -sf $JD_DIR/task.sh /usr/local/bin/task \
