@@ -15,10 +15,6 @@ run_config () {
         cp -fv $JD_DIR/sample/config.sample.sh $JD_DIR/config/config.sh
         echo
     fi
-
-    if [ ! -f $JD_DIR/log/.tmp/scripts.list.old ]; then
-        cp -fv $JD_DIR/sample/scripts.list.old $JD_DIR/log/.tmp/
-    fi
 }
 
 run_config 2>&1 | perl -pe "s|^(.+)|[cont-init.d] $(basename $0): \1|g"
