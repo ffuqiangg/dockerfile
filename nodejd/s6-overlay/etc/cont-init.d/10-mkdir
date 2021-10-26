@@ -10,12 +10,12 @@ run_mkdir () {
         echo -e "没有映射log日志目录给本容器，在容器内创建该文件夹\n"
         mkdir -p $JD_DIR/log
     fi
-    if [ ! -d $JD_DIR/log/.tmp ]; then
-        mkdir -p $JD_DIR/log/.tmp
-    fi
     if [ ! -d $JD_DIR/raw ]; then
         echo -e "没有映射raw脚本目录给本容器，在容器内创建该文件夹\n"
         mkdir -p $JD_DIR/raw
+    fi
+    if [ ! -d $JD_DIR/.tmp ]; then
+        mkdir -p $JD_DIR/.tmp
     fi
 }
 
