@@ -8,25 +8,13 @@ ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
     PS1="\u@\h:\w \$ "
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories \
     && apk update -f \
-    && apk --no-cache add -f \
-       bash \
-       s6-overlay \
-       openssl \
-       coreutils \
-       moreutils \
-       git \
-       wget \
-       curl \
-       nano \
-       tzdata \
+    && apk --no-cache add -f bash s6-overlay openssl coreutils moreutils git wget curl nano tzdata \
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone \
     && chmod +x /etc/services.d/refresh-cron/refresh-cron \
     && pip config set global.index-url https://mirrors.bfsu.edu.cn/pypi/web/simple \
     && python -m pip install --upgrade pip \
     && pip3 install telethon requests \
-    && rm -rf \
-       /tmp/* \
-       /root/.cache
+    && rm -rf /tmp/* /root/.cache
 WORKDIR /root
 ENTRYPOINT ["/init"]
