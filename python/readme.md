@@ -1,7 +1,6 @@
 本项目基于 [nevinee/python](https://hub.docker.com/r/nevinee/python/) 修改而来。
 
-集成了`bash openssl coreutils moreutils git wget curl nano tzdata perl`，默认时区`Asia/Shanghai`。
-默认安装了`telethon requests`。
+集成了`bash openssl coreutils moreutils git wget curl nano tzdata perl telethon requests`，默认时区`Asia/Shanghai`。
 
 docker cli
 ```shell
