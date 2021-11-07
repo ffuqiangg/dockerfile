@@ -8,7 +8,6 @@ docker run -dit \
   -v /宿主机上的目录/:/root \
   --name python \
   --hostname python \
-  --net host \
   ffuqiangg/python
 ```
 
@@ -19,7 +18,6 @@ services:
   python:
     container_name: python
     image: ffuqiangg/python
-    network_mode: "host"
     restart: always
     volumes:
       - ./:/root
