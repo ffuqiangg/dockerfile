@@ -23,7 +23,7 @@ services:
       - ./:/root
 ```
 
-然后进入容器：
+进入容器：
 ```shell
 docker exec -it python bash
 ```
