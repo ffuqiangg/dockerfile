@@ -1,5 +1,5 @@
 FROM alpine:latest
-COPY --from=nevinee/loop:latest / /
+COPY --from=nevinee/loop / /
 COPY s6-overlay /
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
     LANG=zh_CN.UTF-8 \
