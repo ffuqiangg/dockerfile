@@ -16,10 +16,6 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone \
     && git clone $JD_SHELL_URL $JD_DIR \
-    && chmod +x $JD_DIR/update.sh \
-    && chmod +x $JD_DIR/task.sh \
-    && chmod +x $JD_DIR/rmlog.sh \
-    && chmod +x /etc/services.d/refresh-cron/refresh-cron \
     && ln -sf $JD_DIR/task.sh /usr/local/bin/task \
     && ln -sf $JD_DIR/update.sh /usr/local/bin/update \
     && ln -sf $JD_DIR/rmlog.sh /usr/local/bin/rmlog
