@@ -1,5 +1,5 @@
 FROM python:alpine
-COPY --from=nevinee/loop / /
+COPY --from=ffuqiangg/loop / /
 COPY s6-overlay /
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
     HOME=/root \
