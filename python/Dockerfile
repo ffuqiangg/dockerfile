@@ -12,7 +12,6 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
     && apk --no-cache add -f bash s6-overlay openssl coreutils moreutils git wget curl nano tzdata subversion \
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone \
-    && chmod +x /etc/services.d/refresh-cron/refresh-cron \
     && pip config set global.index-url https://mirrors.bfsu.edu.cn/pypi/web/simple \
     && python -m pip install --upgrade pip \
     && pip3 install telethon requests \
