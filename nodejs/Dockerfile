@@ -11,7 +11,6 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
     && apk --no-cache add -f bash s6-overlay nodejs npm yarn openssl coreutils moreutils git wget curl nano tzdata perl subversion \
     && rm -rf /var/cache/apk/* \
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
-    && echo "Asia/Shanghai" > /etc/timezone \
-    && chmod +x /etc/services.d/refresh-cron/refresh-cron
+    && echo "Asia/Shanghai" > /etc/timezone
 WORKDIR /root
 ENTRYPOINT ["/init"]
