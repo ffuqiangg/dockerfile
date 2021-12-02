@@ -1,6 +1,4 @@
 FROM python:alpine
-COPY --from=ffuqiangg/loop / /
-COPY s6-overlay /
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
     HOME=/root \
     LANG=zh_CN.UTF-8 \
@@ -16,4 +14,6 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
     && python -m pip install --upgrade pip \
     && pip3 install telethon requests \
     && rm -rf /tmp/* /root/.cache
+COPY --from=ffuqiangg/loop / /
+COPY s6-overlay /
 ENTRYPOINT ["/init"]
