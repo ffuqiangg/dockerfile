@@ -4,7 +4,6 @@ ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
     LANG=zh_CN.UTF-8 \
     SHELL=/bin/bash \
     PS1="\u@\h:\w \$ "
-WORKDIR /root
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories \
     && apk update -f \
     && apk --no-cache add -f bash s6-overlay openssl coreutils moreutils git wget curl nano tzdata subversion \
@@ -16,4 +15,5 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
     && rm -rf /tmp/* /root/.cache
 COPY --from=ffuqiangg/loop / /
 COPY s6-overlay /
+WORKDIR /root
 ENTRYPOINT ["/init"]
