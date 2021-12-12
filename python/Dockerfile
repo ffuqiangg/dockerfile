@@ -6,7 +6,7 @@ ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
     PS1="\u@\h:\w \$ "
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories \
     && apk update -f \
-    && apk --no-cache add -f bash s6-overlay openssl coreutils moreutils git wget curl vim tzdata subversion \
+    && apk --no-cache add -f bash s6-overlay openssl coreutils moreutils git wget curl nano tzdata subversion \
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone \
     && pip config set global.index-url https://mirrors.bfsu.edu.cn/pypi/web/simple \
