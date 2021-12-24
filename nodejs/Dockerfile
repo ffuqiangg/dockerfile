@@ -1,6 +1,4 @@
 FROM alpine:3.14
-COPY --from=ffuqiangg/loop / /
-COPY s6-overlay /
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
     HOME=/root \
     LANG=zh_CN.UTF-8 \
@@ -12,5 +10,7 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
     && rm -rf /var/cache/apk/* \
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone
+COPY --from=ffuqiangg/loop / /
+COPY s6-overlay /
 WORKDIR /root
 ENTRYPOINT ["/init"]
