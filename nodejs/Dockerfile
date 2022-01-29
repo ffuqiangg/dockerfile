@@ -6,7 +6,7 @@ ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
     PS1="\u@\h:\w \$ "
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories \
     && apk update -f \
-    && apk --no-cache add -f bash s6-overlay nodejs npm yarn openssl coreutils moreutils git wget curl nano tzdata perl subversion \
+    && apk --no-cache add -f bash s6-overlay nodejs npm yarn openssl coreutils moreutils git wget curl nano tzdata perl \
     && rm -rf /var/cache/apk/* \
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone
