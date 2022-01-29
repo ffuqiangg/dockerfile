@@ -9,7 +9,7 @@ WORKDIR $JD_DIR
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories \
     && apk update -f \
     && apk upgrade \
-    && apk --no-cache add -f bash s6-overlay coreutils diffutils git wget curl nano tzdata perl openssh nodejs npm yarn subversion \
+    && apk --no-cache add -f bash s6-overlay coreutils diffutils git wget curl nano tzdata perl openssh nodejs npm yarn \
     && rm -rf /var/cache/apk/* \
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone \
