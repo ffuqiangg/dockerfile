@@ -1,4 +1,4 @@
-nodejs 脚本运行环境，集成了`nodejs yarn npm bash openssl coreutils moreutils git wget curl nano tzdata perl svn`，默认时区`Asia/Shanghai`。
+nodejs 脚本运行环境，集成了`nodejs yarn npm bash openssl coreutils moreutils git wget curl nano tzdata perl`，默认时区`Asia/Shanghai`。
 
 docker cli
 ```shell
