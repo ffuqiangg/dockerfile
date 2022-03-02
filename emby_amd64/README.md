@@ -1,4 +1,4 @@
-基于 [emby/embyserver](https://hub.docker.com/r/emby/embyserver) 修改，版本4.6.7.0
+基于 [emby/embyserver](https://hub.docker.com/r/emby/embyserver) 修改，x86-64架构，版本4.6.7.0
 
 仅替换了`System.Net.Http.dll`文件
 
