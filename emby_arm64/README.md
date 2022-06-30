@@ -1,4 +1,4 @@
-基于 [emby/embyserver_arm64v8](https://hub.docker.com/r/emby/embyserver_arm64v8) 修改，arm64v8架构，版本4.7.5.0
+基于 [emby/embyserver_arm64v8](https://hub.docker.com/r/emby/embyserver_arm64v8) 修改，arm64v8架构，版本4.6.7.0
 
 仅替换了`System.Net.Http.dll`文件
 
