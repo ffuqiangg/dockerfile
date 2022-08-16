@@ -29,3 +29,5 @@ docker exec -it python bash
 ```
 
 如果映射目录下存在`crontab.list`，将在创建后以它作为容器的定时任务。2秒扫描一次`crontab.list`文件，文件发生变化自动刷新定时任务。
+
+(https://img.shields.io/badge/LEDE%20R22.08.16-5.4.210--ffuqiangg-success?style=flat-square)
