@@ -1,4 +1,4 @@
-name: 构建Emby_arm64镜像
+name: 构建Emby_arm64镜像4.7
 on:
   workflow_dispatch:
 
