@@ -1,11 +1,11 @@
-name: 构建Emby_arm64镜像 4.7.13.0
+name: 构建Emby_arm64镜像 4.7.14.0
 on:
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: 构建arm64镜像 4.7.13.0
+    name: 构建arm64镜像 4.7.14.0
     env:
       IMAGE_NAME: embyserver_arm64v8
     steps:
