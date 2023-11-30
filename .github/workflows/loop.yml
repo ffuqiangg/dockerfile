@@ -1,4 +1,4 @@
-name: 构建Loop镜像
+name: Build LOOP
 on:
   workflow_dispatch:
 
