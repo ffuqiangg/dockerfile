@@ -5,7 +5,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: BUILD 4.7.14.0
+    name: BUILD EmbyServer
     env:
       IMAGE_NAME: embyserver_arm64v8
     steps:
