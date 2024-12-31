@@ -1,4 +1,4 @@
-FROM python:alpine3.14
+FROM python:alpine3.21
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
     HOME=/root \
     LANG=zh_CN.UTF-8 \
