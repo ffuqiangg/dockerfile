@@ -1,6 +1,7 @@
 FROM ubuntu:22.04
 
-RUN apt update -y && apt full-upgrade -y && \
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt update -y && apt full-upgrade -y && \
     apt install -y antlr3 asciidoc autoconf automake autopoint binutils bison build-essential \
     bzip2 ccache clang cmake cpio curl device-tree-compiler flex gawk gcc-multilib g++-multilib gettext \
     genisoimage git gperf haveged help2man intltool jq libc6-dev-i386 libelf-dev libfuse-dev libglib2.0-dev \
