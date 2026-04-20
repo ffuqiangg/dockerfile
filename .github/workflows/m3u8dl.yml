@@ -1,0 +1,43 @@
+name: Build m3u8 Downloader
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: BUILD m3u8 Downloader
+    env:
+      IMAGE_NAME: m3u8-dl
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Set Up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set Up Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login DockerHub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      
+      - name: Set Up Cache
+        uses: actions/cache@v4
+        id: buildx-cache
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ runner.os }}-buildx
+
+      - name: Buildx
+        uses: docker/build-push-action@v6
+        with:
+          context: ${{ env.IMAGE_NAME }}
+          file: ${{ env.IMAGE_NAME }}/Dockerfile
+          platforms: |
+            linux/amd64
+          push: true
+          tags: |
+            ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
