@@ -6,9 +6,8 @@ RUN git clone https://github.com/Greyh4t/m3u8-Downloader-Go.git src && \
     go build -o /build/m3u8-Downloader-Go
 
 FROM alpine:latest
-WORKDIR /root
+WORKDIR /downloads
 RUN apk add --no-cache ffmpeg && \
-    rm -rf /var/cache/apk/* && \
-    mkdir -p /downloads
-COPY --from=m3u8-builder /build/m3u8-Downloader-Go /root/m3u8-Downloader-Go
-ENTRYPOINT ["/root/m3u8-Downloader-GO"]
+    rm -rf /var/cache/apk/*
+COPY --from=m3u8-builder /build/m3u8-Downloader-Go /m3u8-dl
+ENTRYPOINT ["/m3u8-dl"]
