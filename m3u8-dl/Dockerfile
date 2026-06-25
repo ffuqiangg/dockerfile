@@ -7,7 +7,10 @@ RUN git clone https://github.com/Greyh4t/m3u8-Downloader-Go.git src && \
 
 FROM alpine:latest
 WORKDIR /downloads
-RUN apk add --no-cache ffmpeg && \
-    rm -rf /var/cache/apk/*
+RUN apk add --no-cache ffmpeg tzdata \
+    && rm -rf /var/cache/apk/* \
+    && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+    && echo "Asia/Shanghai" > /etc/timezone \
+    && apk del tzdata
 COPY --from=m3u8-builder /build/m3u8-Downloader-Go /root/m3u8-Downloader-Go
 ENTRYPOINT ["/root/m3u8-Downloader-Go"]
