@@ -1,7 +1,8 @@
 FROM ubuntu:24.04
 
-RUN export DEBIAN_FRONTEND=noninteractive && \
-    apt update -y && apt full-upgrade -y && apt install -y ack antlr3 aria2 asciidoc autoconf automake autopoint \
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt update -y && apt full-upgrade -y && apt install -y ack antlr3 aria2 asciidoc autoconf automake autopoint \
     binutils bison btrfs-progs build-essential bzip2 ca-certificates ccache clang cmake coreutils cpio curl \
     device-tree-compiler ecj fakeroot fastjar flex g++-multilib gawk gcc-multilib genisoimage gettext git \
     gnutls-dev gperf gzip haveged help2man intltool irqbalance jq lib32gcc-s1 libc6-dev-i386 libelf-dev libfuse-dev \
